@@ -85,10 +85,13 @@ public class Hotpatch {
 
         File optimizedLibrarypath = context.getDir("dex", 0);
 
+        Log.d(TAG, String.valueOf(jarfile.exists()));
+
         File cachedDex = new File(optimizedLibrarypath.getPath() + "/" + jarpath.replace("jar", "dex"));
         Log.d(TAG, "Checking for cached version in " + optimizedLibrarypath.getAbsolutePath());
 
         File files[] = optimizedLibrarypath.listFiles();
+        Log.d(TAG, String.valueOf(files.length));
         for (int i = 0; i < files.length; i++) {
             Log.d(TAG, "File: " + files[i].getName());
 

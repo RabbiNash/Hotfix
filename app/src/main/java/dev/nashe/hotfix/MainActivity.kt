@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    val className = "dev.nashe.hotfix.test.TestLib"
+    val className = "dev.nashe.chars.testlib.TestLib"
     val methods = arrayOf("getVersionString")
 
     override fun onCreate(savedInstanceState: Bundle?) {
