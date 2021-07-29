@@ -42,6 +42,7 @@ import okhttp3.CertificatePinner;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
 
 
 public class Hotpatch {
@@ -297,7 +298,12 @@ public class Hotpatch {
         CertificatePinner certificatePinner = new CertificatePinner.Builder()
                 .add(domain, publicKey)
                 .build();
+
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(interceptor)
                 .certificatePinner(certificatePinner)
                 .build();
 

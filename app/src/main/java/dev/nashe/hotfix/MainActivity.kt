@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 "https://github.com",
                 "sha256/pL1+qb9HTMRZJmuC/bB/ZI9d302BYrrqiVuRyW+DGrU="
             )
-            hotpatch.downloadHotpatch("https://github.com/RabbiNash/Hotfix/tree/main/app/libs/app.jar",
+            hotpatch.downloadHotpatch("https://github.com/RabbiNash/Hotfix/blob/main/app/libs/app.jar?raw=true",
                 hotpatchPath,
                 object : Hotpatch.Callback() {
                     override fun run() {
